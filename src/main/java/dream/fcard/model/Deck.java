@@ -121,21 +121,6 @@ public class Deck implements JsonInterface {
     }
 
     /**
-     * Returns a boolean value, if user provided index is valid.
-     * Checks if a user provided index is valid.
-     * Uses provide index that is 1-based, i.e. 1, 2, 3, etc.
-     * If index provided is within 1, 2, 3, ..., last card, then it is valid and return true.
-     * Else return false.
-     *
-     * @param indexProvided Boolean indicating if index provided by user is valid.
-     * @return True if valid, false if invalid.
-     */
-    private boolean isIndexProvidedByUserValid(int indexProvided) {
-        System.out.println(cards.size());
-        return indexProvided <= cards.size() && indexProvided > 0;
-    }
-
-    /**
      * Removes a specified FlashCard using index from the list of FlashCards.
      *
      * @param indexProvided Integer index of FlashCard to remove from list of FlashCards.
@@ -273,11 +258,16 @@ public class Deck implements JsonInterface {
     }
 
     /**
+     * Returns a boolean value, if user provided index is valid.
+     * Checks if a user provided index is valid.
+     * Uses provide index that is 1-based, i.e. 1, 2, 3, etc.
+     * If index provided is within 1, 2, 3, ..., last card, then it is valid and return true.
+     * Else return false.
      *
-     *
-     * @return
+     * @param indexProvided Boolean indicating if index provided by user is valid.
+     * @return True if valid, false if invalid.
      */
-    public int getSize() {
-        return cards.size();
+    private boolean isIndexProvidedByUserValid(int indexProvided) {
+        return indexProvided <= cards.size() && indexProvided > 0;
     }
 }

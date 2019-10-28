@@ -131,7 +131,7 @@ public class MultipleChoiceCard extends FrontBackCard {
      */
     //@@author huiminlim
     @Override
-    public Boolean evaluate(String in) {
+    public Boolean evaluate(String in) throws IndexNotFoundException {
 
         int userAnswer = -1;
 
@@ -143,13 +143,10 @@ public class MultipleChoiceCard extends FrontBackCard {
             throw new NumberFormatException("Choice provided is invalid - " + answerIndex);
         }
 
-        /*
         // Assume options must be a non-negative integer
         if (isNotValidChoice(answerIndex)) {
             throw new IndexNotFoundException("Choice provided is invalid - " + userAnswer);
         }
-
-         */
 
         return userAnswer == displayChoicesAnswerIndex;
     }
