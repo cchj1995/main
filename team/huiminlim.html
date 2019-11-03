@@ -1,7 +1,7 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Lim Hui Min - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/SeEduLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level1">AB-1</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level2">AB-2</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/addressbook-level4">AB-4</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Flash Card Pro</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S1-CS2103-F09-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Lim Hui Min - Project Portfolio</h1></div><div id="content"><div class="sect1">
-<h2 id="project-addressbook-level-3"><a class="link" href="#project-addressbook-level-3">PROJECT: AddressBook - Level 3</a></h2>
+<h2 id="project-flashcard-pro"><a class="link" href="#project-flashcard-pro">PROJECT: FlashCard Pro</a></h2>
 <div class="sectionbody">
 <hr>
 </div>
@@ -10,7 +10,10 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>AddressBook - Level 3 is a desktop address book application used for teaching Software Engineering principles. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 10 kLoC.</p>
+<p>FlashCard Pro is an application designed for students of all fields who prefer to use a desktop app for managing flashcards, as well as teachers who would like to provide resources (in the form of custom flashcard decks) to support their students’ learning.</p>
+</div>
+<div class="paragraph">
+<p>It has a GUI but most of the user interactions happen using a CLI (Command Line Interface). The GUI is to support the user if he/she prefers using the GUI to interact with FlashCard Pro.</p>
 </div>
 </div>
 </div>
@@ -20,29 +23,43 @@
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the ability to undo/redo previous commands</strong></p>
+<p><strong>Major enhancement</strong>: expanded the <strong>functionality and type of FlashCards</strong>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does: allows the user to undo all previous commands one at a time. Preceding undo commands can be reversed by using the redo command.</p>
+<p>Allows the user to assign priorities to each flash card.</p>
 </li>
 <li>
-<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
+<p>Allows the creation of a random set of flash cards for the <code>test</code> function. The set of flash cards created for the test will have a proportion of high priority and low priority cards.</p>
 </li>
 <li>
-<p>Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.</p>
+<p>Expanded the cards to support Multiple Choice cards on top of ordinary Front and Back flash cards.</p>
 </li>
 <li>
-<p>Credits: <em>{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}</em></p>
+<p>Added support for shuffling choices of Multiple Choice cards when displaying the Multiple Choice cards in <code>test</code> mode.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added a history command that allows the user to navigate to previous commands using up/down keys.</p>
+<p>Justification: This feature improves the product significantly because a user can make mistakes in commands and the app should provide a convenient way to rectify them.</p>
 </li>
 <li>
-<p><strong>Code contributed</strong>: [<a href="https://github.com">Functional code</a>] [<a href="https://github.com">Test code</a>] <em>{give links to collated code files}</em></p>
+<p>Highlights:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This enhancement allowed the user to have more flexibility in exploring various types of flash cards to support the usage of the <code>test</code> function.</p>
+</li>
+<li>
+<p>In addition, this feature is challenging because it requires in-depth analysis and design of the Regex parser to determine which card type (Front and Back card or Multiple Choice card) is created.
+**</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Code contributed</strong>: [<a href="https://nus-cs2103-ay1920s1.github.io/tp-dashboard/#search=huiminlim&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2019-09-06&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false">Functional code and test code</a>]</p>
 </li>
 <li>
 <p><strong>Other contributions</strong>:</p>
@@ -53,7 +70,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Managed releases <code>v1.3</code> - <code>v1.5rc</code> (3 releases) on GitHub</p>
+<p>Managed releases <code>v1.1</code> - <code>v1.3</code> (3 releases) on GitHub [<a href="https://github.com/AY1920S1-CS2103-F09-2/main/releases">Releases on Github</a>]</p>
+</li>
+<li>
+<p>Alerted team about bugs found in issue tracker: <a href="https://github.com/AY1920S1-CS2103-F09-2/main/issues/146">#146</a>, <a href="https://github.com/AY1920S1-CS2103-F09-2/main/issues/99">#99</a>, <a href="https://github.com/AY1920S1-CS2103-F09-2/main/issues/109">#109</a></p>
 </li>
 </ul>
 </div>
@@ -76,7 +96,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Did cosmetic tweaks to existing contents of the User Guide: <a href="https://github.com">#14</a></p>
+<p>Did documentation for the CLI commands in the User Guide. (See <a href="#contributions-to-the-user-guide">Contributions to the User Guide</a> below)</p>
+</li>
+<li>
+<p>Did documentation in Developer Guide. (See <a href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a> below)</p>
 </li>
 </ul>
 </div>
@@ -86,29 +109,10 @@
 <div class="ulist">
 <ul>
 <li>
-<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com">#12</a>, <a href="https://github.com">#32</a>, <a href="https://github.com">#19</a>, <a href="https://github.com">#42</a></p>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S1-CS2103T-F13-2/main/pull/205">#205</a>, <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/pull/91">#91</a></p>
 </li>
 <li>
-<p>Contributed to forum discussions (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>, <a href="https://github.com">4</a>)</p>
-</li>
-<li>
-<p>Reported bugs and suggestions for other teams in the class (examples:  <a href="https://github.com">1</a>, <a href="https://github.com">2</a>, <a href="https://github.com">3</a>)</p>
-</li>
-<li>
-<p>Some parts of the history feature I added was adopted by several other class mates (<a href="https://github.com">1</a>, <a href="https://github.com">2</a>)</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Tools:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Integrated a third party library (Natty) to the project (<a href="https://github.com">#42</a>)</p>
-</li>
-<li>
-<p>Integrated a new Github plugin (CircleCI) to the team repo</p>
+<p>Contributed to forum discussions (examples:  <a href="https://github.com/nus-cs2103-AY1920S1/forum/issues/137">#137</a>)</p>
 </li>
 </ul>
 </div>
@@ -117,9 +121,6 @@
 </div>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><em>{you can add/remove categories in the list above}</em></p>
 </div>
 </div>
 </div>
@@ -136,6 +137,547 @@
 </tr>
 </tbody>
 </table>
+<div class="sect2">
+<h3 id="show-help-page-for-commands-available-code-help-code"><a class="link" href="#show-help-page-for-commands-available-code-help-code">Show help page for commands available : <code>help</code></a></h3>
+<div class="paragraph">
+<p>Shows the help page and guides you through the available commands for FlashCard Pro. You can also choose a specific command to look up how to use it</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>help [command/COMMAND_NAME]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>If user does not supply parameter for command: shows all the available commands and syntax in FlashCard Pro</p>
+</li>
+<li>
+<p>If user supply a parameter in command: shows the specific command syntax.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All commands that are available, except for help, can be queried.</p>
+</li>
+<li>
+<p>Other non-valid commands will give a <code>command not found</code> message.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays the commands available for use in FlashCard Pro.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help command/view</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays the syntax to use command <code>view</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="importing-flashcards-from-disk-code-import-code"><a class="link" href="#importing-flashcards-from-disk-code-import-code">Importing flashcards from disk : <code>import</code></a></h3>
+<div class="paragraph">
+<p>Adds a deck of flashcards from a JSON file path to FlashCard Pro&#8217;s library</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>import filepath/FILE_NAME</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You are advised to save your FlashCard Pro decks of flashcards in a folder that is separate from your files.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>FlashCard Pro recommends createing a folder in desktop named <code>flashcardpro</code>.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>import filepath/C:\Users\user\Desktop\flashcardpro\german.json</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Importing the JSON file <code>german.json</code> file from a Windows OS file path.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exporting-flashcards-to-disk-code-export-code"><a class="link" href="#exporting-flashcards-to-disk-code-export-code">Exporting flashcards to disk: <code>export</code></a></h3>
+<div class="paragraph">
+<p>Saves the deck of flashcards to a JSON file in the specified file path</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>export deck/DECK_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>export deck/german</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exports a deck named <code>german</code> in FlashCard Pro library to a JSON file named <code>german.json</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can share the deck of cards in the JSON file saved to another user to use in FlashCard Pro via the <code>import</code> function.+
+Refer to <a href="#importing-flashcards-from-disk-code-import-code">Importing flashcards from disk : <code>import</code></a> for steps.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You are advised to save your FlashCard Pro decks of flashcards in a folder that is separate from your files.<br>
+FlashCard Pro recommends createing a folder in desktop named <code>flashcardpro</code>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-flashcards-in-library-code-view-code"><a class="link" href="#viewing-flashcards-in-library-code-view-code">Viewing flashcards in library: <code>view</code></a></h3>
+<div class="paragraph">
+<p>View the flashcard decks or the individual flashcards in a specific deck</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>view [deck/DECK_NAME]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays all the decks of cards in the library</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view deck/science_deck</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays all the cards in the deck of cards, <code>science_deck</code></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="create-new-empty-deck-code-create-code"><a class="link" href="#create-new-empty-deck-code-create-code">Create new empty deck: <code>create</code></a></h3>
+<div class="paragraph">
+<p>Creates an empty deck in FlashCard Pro library.</p>
+</div>
+<div class="paragraph">
+<p>Format: `create deck/DECK_NAME.</p>
+</div>
+<div class="paragraph">
+<p>Note :</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>DECK_NAME</code> must be unique and no deck that exist in FlashCard Pro library should have the same name of <code>DECK_NAME</code>.</p>
+</li>
+<li>
+<p>If there is another deck with the same name <code>DECK_NAME</code>, there will be an error message and the empty deck will not be created.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>create deck/german</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new empty deck named <code>german</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-new-front-back-card-or-multiple-choice-card-to-deck-code-add-code"><a class="link" href="#add-new-front-back-card-or-multiple-choice-card-to-deck-code-add-code">Add new Front Back card or Multiple Choice Card to deck: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Creates an Front Back card or Multiple Choice Card in a deck of FlashCard Pro library.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>create deck/DECK_NAME [priority/PRIORITY_LEVEL] front/FRONT_TEXT back/BACK_TEXT [choice/CHOICE_TEXT]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>DECK_NAME</code> must be a name of an existing deck in FlashCard Pro.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there is not deck with the name of <code>DECK_NAME</code>, there will be an error message and the card will not be created.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When entering the <code>PRIORITY_LEVEL</code>, there are only 2 valid choices <code>HIGH</code> and <code>LOW</code>. Refer to the table below to know how to use the <code>PRIORITY_LEVEL</code>:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Input for PRIORITY_LEVEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You find the card important and want it to be tested more often</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HIGH</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You find the card less important and want it to be tested less often</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LOW</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>If no <code>priority/</code> parameter is entered, then the default priority level is <code>LOW</code>.</p>
+</li>
+<li>
+<p>If you enter any input other than <code>HIGH</code> or <code>LOW</code>, there will be an error message and the card will not be created.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FRONT_TEXT</code> is the question that you wish to see in the flashcard.</p>
+</li>
+<li>
+<p>To create a Front Back card,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>BACK_TEXT</code> is the answer of the Front Back flashcard.</p>
+</li>
+<li>
+<p>No choice should be entered under <code>choice/</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a Multiple Choice card,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>the <code>BACK_TEXT</code> parameter should correspond to choice entered by the user, using the order of choice entered and should be a integer value from 1, 2, &#8230;&#8203;., Number of choices entered.</p>
+</li>
+<li>
+<p>To create a Multiple Choice card, there should be at least 2 <code>choice/</code> parameters entered.</p>
+</li>
+<li>
+<p>If there are only 1 <code>choice/</code> parameters entered, there will be an error message and the card will not be created.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add deck/german  front/hello back/moin moin</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new Front Back card in deck <code>german</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add deck/german  front/hello back/1 choice/hello choice/bye choice/zzz</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new Multiple Choice card in deck <code>german</code>, with the answer as the first <code>choice/</code> parameter, hello.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-the-card-of-an-existing-deck-of-flashcards-code-edit-code"><a class="link" href="#editing-the-card-of-an-existing-deck-of-flashcards-code-edit-code">Editing the card of an existing deck of flashcards : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>The edit command allows the user to edit flashcards in any existing deck.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit deck/DECK_NAME index/INDEX [front/FRONT_TEXT] [back/BACK_TEXT] [choiceIndex/CHOICE_INDEX] [choice/CHOICE_TEXT]</code></p>
+</div>
+<div class="paragraph">
+<p>Note:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>DECK_NAME</code> must be an existing deck in the FlashCard Pro library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If no deck with <code>DECK_NAME</code> exist in the FlashCard Pro library, there will be an error message and no card will be edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>INDEX</code> refers to the index of a card in the deck.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> must be a valid integer from 1, 2, &#8230;&#8203;, Number of cards in deck.</p>
+</li>
+<li>
+<p>If the <code>INDEX</code> is invalid, there will be an error message and no card will be edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you want to edit the front of the card, <code>FRONT_TEXT</code> should be supplied.</p>
+</li>
+<li>
+<p>If you want to edit the back of the card, <code>BACK_TEXT</code> should be supplied.</p>
+</li>
+<li>
+<p>If you want to edit a choice of an Multiple Choice card, <code>CHOICE_INDEX</code> and <code>CHOICE_TEXT</code> should be supplied.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the <code>CHOICE_TEXT</code> entered by the user exists as one of the choices in the Multiple Choice card, an error message will be shown and the edit will not be made.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you edit <code>CHOICE_TEXT</code>, do remember that the back of the Multiple Choice card will still determine the correct choice of the Multiple Choice card.
+FlashCard Pro will not be responsible if the editing of an answer choice lead to the choice to be incorrect.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit deck/science_deck index/1 front/what is a cell back/a cell is a building block</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Edits the first flashcard of the deck <code>science_deck</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit deck/science_deck index/1 choiceIndex/3 choice/Hello</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Edits the first Multiple Choice flashcard of the deck <code>science_deck</code>, edit 3rd choice to hello.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-the-card-of-an-existing-deck-of-flashcards-code-delete-code"><a class="link" href="#delete-the-card-of-an-existing-deck-of-flashcards-code-delete-code">Delete the card of an existing deck of flashcards : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes a card from an existing deck in FlashCard Pro.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete deck/DECK_NAME index/INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete deck/german index/1</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deletes the first card of the deck <code>german</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="quit-test-code-stop-code"><a class="link" href="#quit-test-code-stop-code">Quit test: <code>stop</code></a></h4>
+<div class="paragraph">
+<p>Exits the test process when the user is in test mode.<br></p>
+</div>
+<div class="paragraph">
+<p>Exams will also terminate automatically upon running out of cards in the test deck. This will trigger a popup with the results of the test.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="viewing-user-statistics-code-stats-code"><a class="link" href="#viewing-user-statistics-code-stats-code">Viewing user statistics : <code>stats</code></a></h3>
+<div class="paragraph">
+<p>Shows your usage statistics, such as time spent and usage count in general of for a deck of cards.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>stats [deck/DECK_NAME]</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>stats</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays the overview of the time spent and usage count of all decks of cards. Also shows the statistics of the current program State.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>stats deck/science_deck</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Display the overview of time spend and usage count of the deck of cards, <code>science_deck</code>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="faq"><a class="link" href="#faq">FAQ</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
+<strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="command-summary"><a class="link" href="#command-summary">Command Summary</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>help</strong> <code>help [command/COMMAND_NAME]</code><br>
+e.g. <code>help command/view</code></p>
+</li>
+<li>
+<p><strong>import</strong> : <code>import filepath/FILE_NAME</code></p>
+</li>
+<li>
+<p><strong>export</strong> : <code>export deck/DECK_NAME FILE_NAME</code></p>
+</li>
+<li>
+<p><strong>stats</strong> : <code>stats [deck/DECK_NAME]</code><br>
+e.g. <code>stats deck/science_deck</code></p>
+</li>
+<li>
+<p><strong>view</strong> : <code>view [deck/DECK_NAME]</code><br>
+e.g. <code>view deck/science_deck</code></p>
+</li>
+<li>
+<p><strong>create</strong> : <code>create deck/DECK_NAME</code></p>
+</li>
+<li>
+<p><strong>test</strong> : <code>test [duration/TIME_LIMIT_ALLOWED] deck/DECK_NAME</code><br>
+e.g. <code>test deck/science_deck</code></p>
+</li>
+<li>
+<p><strong>exit</strong> : <code>exit</code></p>
+</li>
+<li>
+<p><strong>edit</strong> : <code>edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT] [back/NEW_BACK_TEXT]</code><br>
+e.g. <code>edit deck/science_deck action/edit index/1 front/what is a cell back/a cell is a building block</code></p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -151,14 +693,832 @@
 </tr>
 </tbody>
 </table>
+<div class="imageblock">
+<div class="content">
+<img src="../images/cards_class_diagram.png" alt="cards class diagram">
+</div>
+</div>
+<div class="ulist">
+<div class="title"><code>FlashCard</code>,</div>
+<ul>
+<li>
+<p>There are 3 types of cards used by our App, the <code>JavascriptCard</code>, <code>FrontBackCard</code> and <code>MultipleChoiceCard</code>.</p>
+</li>
+<li>
+<p><code>JavascriptCard</code> and <code>FrontBackCard</code> implements from <code>FlashCard</code>, an interface class.</p>
+</li>
+<li>
+<p><code>MultipleChoiceCard</code> inherits from <code>FrontBackCard</code>.</p>
+</li>
+<li>
+<p>The interface class <code>FlashCard</code> also implements <code>JsonInterface</code> class to allow loading and saving to Json format.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<div class="title">FlashCard Priority</div>
+<p>Each FlashCard has an associated priority level, which the user can indicate his/her value of the importance of the card.</p>
+</div>
+<div class="paragraph">
+<p>The priority levels are described below:</p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 31.4285%;">
+<col style="width: 32.8571%;">
+<col style="width: 35.7144%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Intended Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HIGH_PRIORITY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valued as important by user, should be tested more often</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LOW_PRIORITY</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valued, but less important by user, should be tested less often</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The sequence diagram below shows how the <code>ExamRunner</code> component can use the <code>createSubsetForTest()</code> method in the <code>Deck</code> and make use of the priorities associated with the <code>FlashCards</code> to create a test that emphasises the <code>FlashCards</code> that the user deems as important.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/flashcards_priority%20cards.png" alt="flashcards priority cards">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Constructor of <code>ExamRunner</code> is called.</p>
+</li>
+<li>
+<p>In the constructor of <code>ExamRunner</code>, a method call is made to <code>Deck</code> to create a subset of cards for test.</p>
+</li>
+<li>
+<p><code>Deck</code> processes the method call, responds as such:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there are less than 10 cards in <code>Deck</code>, return all the cards.</p>
+</li>
+<li>
+<p>If there are more than 10 cards in <code>Deck</code>, return a set of cards with both <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards, which the proportion is weighted at 60% to 40% ration respectively.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>Deck</code> returns the test set to <code>ExamRunner</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The current implementation has yet to handle the situation where <code>ExamRunner</code> creates a test set when there are no cards in Deck. This will be implemented before the next code release.</p>
+</div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="project-powerpointlabs"><a class="link" href="#project-powerpointlabs">PROJECT: PowerPointLabs</a></h2>
+<h2 id="product-scope"><a class="link" href="#product-scope">Product Scope</a></h2>
 <div class="sectionbody">
-<hr>
 <div class="paragraph">
-<p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
+<p><strong>Target user profile</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>wishes to learn new materials by retrieval learning and self-testing</p>
+</li>
+<li>
+<p>is an independent learner</p>
+</li>
+<li>
+<p>contents of learning are largely textual</p>
+</li>
+<li>
+<p>prefer desktop apps over other types</p>
+</li>
+<li>
+<p>can type fast</p>
+</li>
+<li>
+<p>prefers typing over mouse input</p>
+</li>
+<li>
+<p>is reasonably comfortable using CLI apps</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Value proposition</strong>: allow effective reinforcement learning of textual content by answering using CLI input to a question prompt from a GUI</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 14:17:08 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="user-stories"><a class="link" href="#user-stories">User Stories</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 22%;">
+<col style="width: 23%;">
+<col style="width: 25%;">
+<col style="width: 30%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new deck</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create a new topic collection of flash cards to test myself</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add a new card to a deck</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">include a new question into the topic of the deck to test myself</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save my deck of flash cards into my local drive</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can share it with my friends</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">load my deck of flash cards into the app</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can reuse the deck of cards created</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user that takes flash card tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select an option out of four that best matches the front of a flash card</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can check that I have understood the concept the flash card aims to impart</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learner who wants to track his/her progress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the questions I have not done well in</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">improve my understanding on these concepts tested</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learner who wants to prioritise some test questions over others</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">set which questions are more important</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be exposed to these important questions more in the tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">beginner user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access a help page</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">i can learn about the features at a glance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">student with subjects of different language mediums</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add flashcards of differing languages</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can customise my flashcards to the subject I am interested to do</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user creating flash cards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">save collections of thematically similar flash cards</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I can share my cards easily to other users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the list of flashcards in a deck</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remember the material at the back of the flashcard</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit the front and/or back of the flashcard in a deck</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete a flashcard from a deck</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view the decks of flashcards in my library</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I know what are the decks available for my usage</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">intermediate learner</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vary the amount of difficult questions in a test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expose myself to a test with varying difficult each time I test myself</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">expert learner with MCQ flashcard test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">remove the choices given by the MCQ choices and enter the answers via CLI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">test my understanding of the concept without a MCQ choice prompt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">learner attempting MCQ questions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have randomised choices each time I try the test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">I will not copy the choice from the previous test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">restore my library state of my previous session</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">continue using FlashCard Pro without much time wasted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user attempting a test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my score after the test</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Use Cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For all use cases below, the <strong>System</strong> is the <code>FlashCard Pro</code> and the <strong>Actor</strong> is the <code>learner</code>, unless specified otherwise)</p>
+</div>
+<h3 id="use-case-create-a-deck-of-cards" class="discrete">Use case: Create a deck of cards</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Learner creates a new empty deck and specifies the name of the deck of cards.</p>
+</li>
+<li>
+<p>Learner adds individual cards to the deck and specifies the content of the front and back of the cards.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a. FlashCard Pro detects deck name provided by learner is identical to an existing deck of cards in the library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. FlashCard Pro informs the learner that deck creation is unsuccessful.</p>
+</li>
+<li>
+<p>1a2. Learner creates a new deck with another unique deck name.</p>
+</li>
+<li>
+<p>Steps 1a1-1a2 are repeated until the data entered are correct.</p>
+</li>
+<li>
+<p>Use case resumes from step 2.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2a. FlashCard Pro detects no front and/or back content specified by the learner.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. FlashCard Pro informs the learner that card creation is unsuccessful.</p>
+</li>
+<li>
+<p>2a2. Learner creates a new card with the correct front and/or back content.</p>
+</li>
+<li>
+<p>Steps 2a1-2a2 are repeated until the format of the command entered is correct.</p>
+<div class="paragraph">
+<p>(Was wondering if FlashCard Pro should create the deck, but with a numbering like untitled_1, untitled_2 etc)</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-start-a-untimed-test" class="discrete">Use case: Start a untimed test</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Learner starts untimed test with a deck of cards by specifying deck name.</p>
+</li>
+<li>
+<p>FlashCard Pro begins test.</p>
+</li>
+<li>
+<p>FlashCard Pro flashes text on the front of a flash card to learner.</p>
+</li>
+<li>
+<p>FlashCard Pro waits for learner&#8217;s answer.</p>
+</li>
+<li>
+<p>Learner enters answer.</p>
+</li>
+<li>
+<p>FlashCard Pro matches answer with text on back of flash card.</p>
+</li>
+<li>
+<p>FlashCard Pro informs learner about correctness of the learner&#8217;s answer.</p>
+</li>
+<li>
+<p>FlashCard Pro displays the correct answer, the text on the back of the flash card.</p>
+<div class="paragraph">
+<p>Steps 3-8 are repeated until all the flash cards in the deck are completed.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-import-an-existing-deck-of-cards-from-a-json-file" class="discrete">Use case: Import an existing deck of cards from a JSON file</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Learner specifies the filepath of the deck of cards to import, in a JSON file format.</p>
+</li>
+<li>
+<p>FlashCard Pro loads the file in the filepath.</p>
+</li>
+<li>
+<p>FlashCard Pro parses the fields in the JSON file.</p>
+</li>
+<li>
+<p>FlashCard Pro constructs the deck of cards.</p>
+</li>
+<li>
+<p>FlashCard Pro stores the deck of cards in the library.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. FlashCard Pro detects filepath is invalid.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. FlashCard Pro informs the learner that import of deck of cards is unsuccessful.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b. FlashCard Pro detects that filepath does not lead to a JSON file.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. FlashCard Pro informs the learner that import of deck of cards is unsuccessful.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-running-a-test-using-front-back-cards" class="discrete">Use case: Running a test using Front Back Cards</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command to start test with a deck of card and supplies deck name.</p>
+</li>
+<li>
+<p>System obtains the deck of cards.</p>
+</li>
+<li>
+<p>System starts test session.</p>
+</li>
+<li>
+<p>System shows front of card to user, waits for answer.</p>
+</li>
+<li>
+<p>User enters the answer.</p>
+</li>
+<li>
+<p>System evaluates the answer.</p>
+</li>
+<li>
+<p>System reports the correctness of the answer.</p>
+</li>
+<li>
+<p>System moves to next card.</p>
+<div class="paragraph">
+<p>Step 4-8 repeated until there are no cards in the deck remaining.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. System does not find a deck with the deck name specified by the user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System tells user that there is no deck with specified name.</p>
+</li>
+<li>
+<p>1a2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. System has no decks in library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. System tells user that there are no decks in the library.</p>
+</li>
+<li>
+<p>1b2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-creating-a-deck-of-cards" class="discrete">Use case: Creating a deck of cards</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command to create a deck.</p>
+</li>
+<li>
+<p>System creates a new deck.</p>
+</li>
+<li>
+<p>User enters command to create a new card in the deck.</p>
+</li>
+<li>
+<p>System creates a card.</p>
+</li>
+<li>
+<p>System stores the card in the deck.</p>
+<div class="paragraph">
+<p>Steps 2-5 repeats as long as the user wants to add a card.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-untimed-test-with-a-deck-of-multiple-choice-cards" class="discrete">Use case: Untimed Test with a deck of Multiple Choice Cards</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command to start test on a deck.
+(System creates a test subset)</p>
+</li>
+<li>
+<p>System gets the deck the user wants to test on.</p>
+</li>
+<li>
+<p>System starts test session.</p>
+</li>
+<li>
+<p>System randomises the choice ordering.</p>
+</li>
+<li>
+<p>System displays the front of card and choices.</p>
+</li>
+<li>
+<p>User enters the choice of correct answer.</p>
+</li>
+<li>
+<p>System evaluates the answer.
+8  System shows the correctness of the answer.</p>
+</li>
+<li>
+<p>System moves to next card.</p>
+<div class="paragraph">
+<p>Steps 4-9 are repeated until there are no more cards in the test set.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. System does not find a deck with the deck name specified by the user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System tells user that there is no deck with specified name.</p>
+</li>
+<li>
+<p>1a2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. System has no decks in library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. System tells user that there are no decks in the library.</p>
+</li>
+<li>
+<p>1b2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>6a. User enters an invalid choice.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>6a1. System checks if choice is valid.</p>
+</li>
+<li>
+<p>6a2. System tells User that choice entered is invalid.</p>
+</li>
+<li>
+<p>6a3. System requests User to enter another choice.</p>
+<div class="paragraph">
+<p>Steps 6a1-6a3 repeats until the User enters a valid choice.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-timed-test-with-a-deck-of-multiple-choice-cards" class="discrete">Use case: Timed Test with a deck of Multiple Choice Cards</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command to start test on a deck.</p>
+<div class="paragraph">
+<p>(System creates a test subset)</p>
+</div>
+</li>
+<li>
+<p>System gets the deck the user wants to test on.</p>
+</li>
+<li>
+<p>System starts test session.</p>
+</li>
+<li>
+<p>System randomises the choice ordering.</p>
+</li>
+<li>
+<p>System displays the front of card and choices.</p>
+</li>
+<li>
+<p>User enters the choice of correct answer.</p>
+</li>
+<li>
+<p>System evaluates the answer.
+8  System shows the correctness of the answer.</p>
+</li>
+<li>
+<p>System moves to next card.</p>
+<div class="paragraph">
+<p>Steps 4-9 are repeated until there are no more cards in the test set.</p>
+</div>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. System does not find a deck with the deck name specified by the user</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System tells user that there is no deck with specified name.</p>
+</li>
+<li>
+<p>1a2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1b. System has no decks in library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1b1. System tells user that there are no decks in the library.</p>
+</li>
+<li>
+<p>1b2. System exits test creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>6a. User enters an invalid choice.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>6a1. System checks if choice is valid.</p>
+</li>
+<li>
+<p>6a2. System tells User that choice entered is invalid.</p>
+<div class="paragraph">
+<p>Steps 6a1-6a3 repeats 3 times.</p>
+</div>
+</li>
+<li>
+<p>6a4. User enters invalid choice for 4th time.</p>
+</li>
+<li>
+<p>6a5. System receives invalid choice for 4th time.</p>
+</li>
+<li>
+<p>6a6. System terminates test.</p>
+</li>
+<li>
+<p>6a7. System tells User that test has terminated due to incorrect inputs.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-creating-a-multiple-choice-card" class="discrete">Use case: Creating a Multiple Choice Card</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters command to create a MCQ Card to a deck.</p>
+</li>
+<li>
+<p>System starts MCQ Card creation.</p>
+</li>
+<li>
+<p>System stores MCQ card in deck.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extension</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>1a. User enters duplicated choices.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>1a1. System detects duplicated choices in choices provided by user.</p>
+</li>
+<li>
+<p>1a2. System tells User that there are duplicates in chocies provided.</p>
+</li>
+<li>
+<p>1a3. System ends card creation.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 17:44:18 UTC</div></div></div></body></html>
