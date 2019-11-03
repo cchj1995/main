@@ -17,12 +17,14 @@
 <li><a href="#show-help-page-for-commands-available-code-help-code">4.1. Show help page for commands available : <code>help</code></a></li>
 <li><a href="#importing-flashcards-from-disk-code-import-code">4.2. Importing flashcards from disk : <code>import</code></a></li>
 <li><a href="#exporting-flashcards-to-disk-code-export-code">4.3. Exporting flashcards to disk: <code>export</code></a></li>
-<li><a href="#viewing-user-statistics-code-stats-code">4.4. Viewing user statistics : <code>stats</code></a></li>
-<li><a href="#viewing-flashcards-in-library-code-view-code">4.5. Viewing flashcards in library: <code>view</code></a></li>
-<li><a href="#creating-new-flashcards-code-create-code">4.6. Creating new flashcards : <code>create</code></a></li>
-<li><a href="#start-test-with-flashcards-code-test-code">4.7. Start test with flashcards : <code>test</code></a></li>
-<li><a href="#quit-test-or-flashcard-creation-code-exit-code">4.8. Quit test or flashcard creation : <code>exit</code></a></li>
-<li><a href="#editing-the-cards-of-an-existing-deck-of-flashcards-code-edit-code">4.9. Editing the cards of an existing deck of flashcards : <code>edit</code></a></li>
+<li><a href="#viewing-flashcards-in-library-code-view-code">4.4. Viewing flashcards in library: <code>view</code></a></li>
+<li><a href="#create-new-empty-deck-code-create-code">4.5. Create new empty deck: <code>create</code></a></li>
+<li><a href="#add-new-front-back-card-or-multiple-choice-card-to-deck-code-add-code">4.6. Add new Front Back card or Multiple Choice Card to deck: <code>add</code></a></li>
+<li><a href="#add-new-javascript-card-or-java-card">4.7. Add new Javascript card or Java Card</a></li>
+<li><a href="#editing-the-card-of-an-existing-deck-of-flashcards-code-edit-code">4.8. Editing the card of an existing deck of flashcards : <code>edit</code></a></li>
+<li><a href="#delete-the-card-of-an-existing-deck-of-flashcards-code-delete-code">4.9. Delete the card of an existing deck of flashcards : <code>delete</code></a></li>
+<li><a href="#start-test-with-flashcards-code-test-code">4.10. Start test with flashcards : <code>test</code></a></li>
+<li><a href="#viewing-user-statistics-code-stats-code">4.11. Viewing user statistics : <code>stats</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -51,7 +53,10 @@
 <p>After sets of flashcards (known as “decks”) have been created, the user may interact with the flashcards in various ways. For example, FlashCard Pro can be configured to show the “front” of the card, prompting the user to enter their guess for what is on the “back” of the card. The user’s attempt is gauged “correct” if it matches the definition of the card.</p>
 </div>
 <div class="paragraph">
-<p>As with physical flashcards, the flashcards in FlashCard Pro can be shuffled, used in reverse, mixed between decks, etc. Unlike physical flashcards, flashcards in FlashCard Pro are dynamic, offering a range of possibilities from traditional memorisation-type uses to support for learning programming. For example, teachers may define basic coding problems which their students can attempt to answer. FlashCard Pro will evaluate the output of the student’s solution, allowing students to gauge their own coding knowledge, and teachers to evaluate their students’ progress.</p>
+<p>As with physical flashcards, the flashcards in FlashCard Pro can be shuffled, used in reverse, mixed between decks, etc. Unlike physical flashcards, flashcards in FlashCard Pro are dynamic, offering a range of possibilities from traditional memorisation-type uses to support for learning programming.</p>
+</div>
+<div class="paragraph">
+<p>For example, teachers may define basic coding problems which their students can attempt to answer. FlashCard Pro will evaluate the output of the student’s solution, allowing students to gauge their own coding knowledge, and teachers to evaluate their students’ progress.</p>
 </div>
 </div>
 </div>
@@ -75,29 +80,6 @@
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
 </div>
-</div>
-</li>
-<li>
-<p>Type the command in the command box and press <kbd>Enter</kbd> to execute it.<br>
-e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> will open the help window.</p>
-</li>
-<li>
-<p>Some example commands you can try:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><code>list</code></strong> : lists all contacts</p>
-</li>
-<li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
-</li>
-<li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
-</li>
-<li>
-<p><strong><code>exit</code></strong> : exits the app</p>
-</li>
-</ul>
 </div>
 </li>
 <li>
@@ -146,13 +128,20 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Shows all the available commands and syntax in the application if user supplied no parameters except command.</p>
+<p>If user does not supply parameter for command: shows all the available commands and syntax in FlashCard Pro</p>
 </li>
 <li>
-<p>Shows the specific command syntax if the command is specified in the optional parameters.</p>
+<p>If user supply a parameter in command: shows the specific command syntax.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All commands that are available, except for help, can be queried.</p>
 </li>
 <li>
-<p>All commands that are available, except for help, can be queried, and other non-valid commands will give a “command not found” message.</p>
+<p>Other non-valid commands will give a <code>command not found</code> message.</p>
+</li>
+</ul>
+</div>
 </li>
 </ul>
 </div>
@@ -164,14 +153,22 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>help</code>
-Displays the commands available for FlashCard Pro</p>
-</li>
-<li>
-<p><code>help command/view</code>
-Displays the syntax to use command <code>view</code></p>
+<p><code>help</code><br></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Displays the commands available for use in FlashCard Pro.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>help command/view</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Displays the syntax to use command <code>view</code>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -182,6 +179,34 @@ Displays the syntax to use command <code>view</code></p>
 <div class="paragraph">
 <p>Format: <code>import filepath/FILE_NAME</code></p>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You are advised to save your FlashCard Pro decks of flashcards in a folder that is separate from your files.<br>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>FlashCard Pro recommends createing a folder in desktop named <code>flashcardpro</code>.</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>import filepath/C:\Users\user\Desktop\flashcardpro\german.json</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Importing the JSON file <code>german.json</code> file from a Windows OS file path.</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="exporting-flashcards-to-disk-code-export-code"><a class="link" href="#exporting-flashcards-to-disk-code-export-code">4.3. Exporting flashcards to disk: <code>export</code></a></h3>
@@ -189,7 +214,20 @@ Displays the syntax to use command <code>view</code></p>
 <p>Saves the deck of flashcards to a JSON file in the specified file path</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>export deck/DECK_NAME FILE_NAME</code></p>
+<p>Format: <code>export deck/DECK_NAME</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>export deck/german</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Exports a deck named <code>german</code> in FlashCard Pro library to a JSON file named <code>german.json</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -198,48 +236,28 @@ Displays the syntax to use command <code>view</code></p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can share the deck of cards in the JSON file saved to another user to use in FlashCard Pro via the <code>import</code> function.
+You can share the deck of cards in the JSON file saved to another user to use in FlashCard Pro via the <code>import</code> function.+
+Refer to <a href="#importing-flashcards-from-disk-code-import-code">Section 4.2, &#8220;Importing flashcards from disk : <code>import</code>&#8221;</a> for steps.
 </td>
 </tr>
 </table>
 </div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>example</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="viewing-user-statistics-code-stats-code"><a class="link" href="#viewing-user-statistics-code-stats-code">4.4. Viewing user statistics : <code>stats</code></a></h3>
-<div class="paragraph">
-<p>Shows your usage statistics, such as time spent and usage count in general of for a deck of cards in a graphical format (i.e. pie charts, bar graphs etc)</p>
-</div>
-<div class="paragraph">
-<p>Format: <code>stats [deck/DECK_NAME]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>stats</code>
-Displays the overview of the time spent and usage count of all decks of cards. Also shows the statistics of the current program State.</p>
-</li>
-<li>
-<p><code>stats deck/science_deck</code>
-Display the overview of time spend and usage count of the deck of cards, <code>science_deck</code>.</p>
-</li>
-</ul>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You are advised to save your FlashCard Pro decks of flashcards in a folder that is separate from your files.<br>
+FlashCard Pro recommends createing a folder in desktop named <code>flashcardpro</code>.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-flashcards-in-library-code-view-code"><a class="link" href="#viewing-flashcards-in-library-code-view-code">4.5. Viewing flashcards in library: <code>view</code></a></h3>
+<h3 id="viewing-flashcards-in-library-code-view-code"><a class="link" href="#viewing-flashcards-in-library-code-view-code">4.4. Viewing flashcards in library: <code>view</code></a></h3>
 <div class="paragraph">
 <p>View the flashcard decks or the individual flashcards in a specific deck</p>
 </div>
@@ -252,78 +270,48 @@ Display the overview of time spend and usage count of the deck of cards, <code>s
 <div class="ulist">
 <ul>
 <li>
-<p><code>view</code>
-Displays all the decks of cards in the library</p>
-</li>
-<li>
-<p><code>view deck/science_deck</code>
-Displays all the cards in the deck of cards, <code>science_deck</code></p>
+<p><code>view</code><br></p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect2">
-<h3 id="creating-new-flashcards-code-create-code"><a class="link" href="#creating-new-flashcards-code-create-code">4.6. Creating new flashcards : <code>create</code></a></h3>
 <div class="paragraph">
-<p>Enters 'Create' mode. Allows the sequential creation of different cards based on input (FrontBack, MCQ and JavaScript cards).</p>
+<p>Displays all the decks of cards in the library</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>view deck/science_deck</code><br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>Format: `create'</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>For FrontBack Cards:
-Format: 'front/FRONT_OF_CARD back/BACK_OF_CARD'</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>For MCQ Cards:
-Format: 'front/FRONT_OF_CARD choice/CHOICE1 choice/CHOICE2 [choice/CHOICE3...] correctIndex/INTEGER'
-Where correctIndex indicates which choice is correct.</pre>
-</div>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>For JavaScript Cards:
-Format: 'front/FRONT_OF_CARD testCase/assert(TESTCASE) [testCase/assert(TESTCASE) ...]'</pre>
-</div>
+<p>Displays all the cards in the deck of cards, <code>science_deck</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="start-test-with-flashcards-code-test-code"><a class="link" href="#start-test-with-flashcards-code-test-code">4.7. Start test with flashcards : <code>test</code></a></h3>
+<h3 id="create-new-empty-deck-code-create-code"><a class="link" href="#create-new-empty-deck-code-create-code">4.5. Create new empty deck: <code>create</code></a></h3>
 <div class="paragraph">
-<p>Starts a test with a deck of flashcards, with the choice of an untimed test (timed mode will be added in <code>v1.4</code>)</p>
+<p>Creates an empty deck in FlashCard Pro library.</p>
+</div>
+<div class="paragraph">
+<p>Format: `create deck/DECK_NAME.</p>
+</div>
+<div class="paragraph">
+<p>Note :</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Press <code>Start Review</code> within a deck display screen to initiate a new untimed test.</p>
+<p>The <code>DECK_NAME</code> must be unique and no deck that exist in FlashCard Pro library should have the same name of <code>DECK_NAME</code>.</p>
 </li>
 <li>
-<p>There are 3 types of possible cards:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Basic Front-Back Cards: Users will be shown the front of the card and should think of the answer to that card. They can then click on the <code>Show Back</code> button to view the back of the card. If they are correct, they should click on <code>I got it right!</code> to count their score.</p>
-</li>
-<li>
-<p>MCQ Card: Users will be given a multiple choice card and can select the option which they think is correct. Clicking <code>Show Back</code> will then show them the correct answer.</p>
-</li>
-<li>
-<p>Javascript Card: Users will be given a problem that can be solved in Javascript. Click on the <code>Go To FlashCoder</code> to begin coding in our in-built compiler. Running your program will tell you if you passed or not.</p>
-</li>
-</ul>
-</div>
+<p>If there is another deck with the same name <code>DECK_NAME</code>, there will be an error message and the empty deck will not be created.</p>
 </li>
 </ul>
 </div>
 </div>
-</div>
-<div class="paragraph">
-<p>Format: <code>test [duration/TIME_LIMIT_ALLOWED] deck/DECK_NAME</code> (to be implemented in <code>v1.4</code>)</p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -331,61 +319,309 @@ Format: 'front/FRONT_OF_CARD testCase/assert(TESTCASE) [testCase/assert(TESTCASE
 <div class="ulist">
 <ul>
 <li>
-<p><code>test deck/science_deck</code>
-Starts a untimed test with the deck of cards, <code>science_deck</code></p>
+<p><code>create deck/german</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new empty deck named <code>german</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-new-front-back-card-or-multiple-choice-card-to-deck-code-add-code"><a class="link" href="#add-new-front-back-card-or-multiple-choice-card-to-deck-code-add-code">4.6. Add new Front Back card or Multiple Choice Card to deck: <code>add</code></a></h3>
+<div class="paragraph">
+<p>Creates an Front Back card or Multiple Choice Card in a deck of FlashCard Pro library.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>create deck/DECK_NAME [priority/PRIORITY_LEVEL] front/FRONT_TEXT back/BACK_TEXT [choice/CHOICE_TEXT]&#8230;&#8203;</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>DECK_NAME</code> must be a name of an existing deck in FlashCard Pro.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If there is not deck with the name of <code>DECK_NAME</code>, there will be an error message and the card will not be created.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><code>test duration/50 deck/science_deck</code>
-Starts a timed test of 50 seconds with the deck of cards, <code>science_deck</code></p>
+<p>When entering the <code>PRIORITY_LEVEL</code>, there are only 2 valid choices <code>HIGH</code> and <code>LOW</code>. Refer to the table below to know how to use the <code>PRIORITY_LEVEL</code>:</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all" style="width: 59%;">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Priority</th>
+<th class="tableblock halign-left valign-top">Value</th>
+<th class="tableblock halign-left valign-top">Input for PRIORITY_LEVEL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">High</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You find the card important and want it to be tested more often</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>HIGH</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Low</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">You find the card less important and want it to be tested less often</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>LOW</code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>If no <code>priority/</code> parameter is entered, then the default priority level is <code>LOW</code>.</p>
+</li>
+<li>
+<p>If you enter any input other than <code>HIGH</code> or <code>LOW</code>, there will be an error message and the card will not be created.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>FRONT_TEXT</code> is the question that you wish to see in the flashcard.</p>
+</li>
+<li>
+<p>To create a Front Back card,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><code>BACK_TEXT</code> is the answer of the Front Back flashcard.</p>
+</li>
+<li>
+<p>No choice should be entered under <code>choice/</code>.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>To create a Multiple Choice card,</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>the <code>BACK_TEXT</code> parameter should correspond to choice entered by the user, using the order of choice entered and should be a integer value from 1, 2, &#8230;&#8203;., Number of choices entered.</p>
+</li>
+<li>
+<p>To create a Multiple Choice card, there should be at least 2 <code>choice/</code> parameters entered.</p>
+</li>
+<li>
+<p>If there are only 1 <code>choice/</code> parameters entered, there will be an error message and the card will not be created.</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="quit-test-or-flashcard-creation-code-exit-code"><a class="link" href="#quit-test-or-flashcard-creation-code-exit-code">4.8. Quit test or flashcard creation : <code>exit</code></a></h3>
-<div class="paragraph">
-<p>Exits the test or flashcard creation process.</p>
 </div>
 <div class="paragraph">
-<p>There is also an <code>End Session</code> button that can be used to terminate the exam prematurely.</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add deck/german  front/hello back/moin moin</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new Front Back card in deck <code>german</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add deck/german  front/hello back/1 choice/hello choice/bye choice/zzz</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Creates a new Multiple Choice card in deck <code>german</code>, with the answer as the first <code>choice/</code> parameter, hello.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-new-javascript-card-or-java-card"><a class="link" href="#add-new-javascript-card-or-java-card">4.7. Add new Javascript card or Java Card</a></h3>
+<div class="paragraph">
+<p>(TBC)</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-the-card-of-an-existing-deck-of-flashcards-code-edit-code"><a class="link" href="#editing-the-card-of-an-existing-deck-of-flashcards-code-edit-code">4.8. Editing the card of an existing deck of flashcards : <code>edit</code></a></h3>
+<div class="paragraph">
+<p>The edit command allows the user to edit flashcards in any existing deck.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>edit deck/DECK_NAME index/INDEX [front/FRONT_TEXT] [back/BACK_TEXT] [choiceIndex/CHOICE_INDEX] [choice/CHOICE_TEXT]</code></p>
+</div>
+<div class="paragraph">
+<p>Note:</p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>DECK_NAME</code> must be an existing deck in the FlashCard Pro library.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If no deck with <code>DECK_NAME</code> exist in the FlashCard Pro library, there will be an error message and no card will be edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The <code>INDEX</code> refers to the index of a card in the deck.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>INDEX</code> must be a valid integer from 1, 2, &#8230;&#8203;, Number of cards in deck.</p>
+</li>
+<li>
+<p>If the <code>INDEX</code> is invalid, there will be an error message and no card will be edited.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>If you want to edit the front of the card, <code>FRONT_TEXT</code> should be supplied.</p>
+</li>
+<li>
+<p>If you want to edit the back of the card, <code>BACK_TEXT</code> should be supplied.</p>
+</li>
+<li>
+<p>If you want to edit a choice of an Multiple Choice card, <code>CHOICE_INDEX</code> and <code>CHOICE_TEXT</code> should be supplied.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If the <code>CHOICE_TEXT</code> entered by the user exists as one of the choices in the Multiple Choice card, an error message will be shown and the edit will not be made.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you edit <code>CHOICE_TEXT</code>, do remember that the back of the Multiple Choice card will still determine the correct choice of the Multiple Choice card.
+FlashCard Pro will not be responsible if the editing of an answer choice lead to the choice to be incorrect.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit deck/science_deck index/1 front/what is a cell back/a cell is a building block</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Edits the first flashcard of the deck <code>science_deck</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>edit deck/science_deck index/1 choiceIndex/3 choice/Hello</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Edits the first Multiple Choice flashcard of the deck <code>science_deck</code>, edit 3rd choice to hello.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="delete-the-card-of-an-existing-deck-of-flashcards-code-delete-code"><a class="link" href="#delete-the-card-of-an-existing-deck-of-flashcards-code-delete-code">4.9. Delete the card of an existing deck of flashcards : <code>delete</code></a></h3>
+<div class="paragraph">
+<p>Deletes a card from an existing deck in FlashCard Pro.</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>delete deck/DECK_NAME index/INDEX</code></p>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete deck/german index/1</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Deletes the first card of the deck <code>german</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="start-test-with-flashcards-code-test-code"><a class="link" href="#start-test-with-flashcards-code-test-code">4.10. Start test with flashcards : <code>test</code></a></h3>
+<div class="paragraph">
+<p>Starts a test with a deck of flashcards, with the choice of an untimed test (timed mode will be added in <code>v1.4</code>)</p>
+</div>
+<div class="paragraph">
+<p>(TBC)</p>
+</div>
+<div class="paragraph">
+<p>Format: <code>test deck/DECK_NAME [duration/TIME_LIMIT_ALLOWED]</code> (to be implemented in <code>v1.4</code>)</p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>test deck/science_deck</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Starts a untimed test with the deck of cards, <code>science_deck</code></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>test duration/50 deck/science_deck</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Starts a timed test of 50 seconds with the deck of cards, <code>science_deck</code></p>
+</div>
+<div class="sect3">
+<h4 id="quit-test-code-stop-code"><a class="link" href="#quit-test-code-stop-code">4.10.1. Quit test: <code>stop</code></a></h4>
+<div class="paragraph">
+<p>Exits the test process when the user is in test mode.<br></p>
 </div>
 <div class="paragraph">
 <p>Exams will also terminate automatically upon running out of cards in the test deck. This will trigger a popup with the results of the test.</p>
 </div>
-<div class="paragraph">
-<p>Format: <code>exit</code> (to be done up in <code>v1.4</code>)</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-the-cards-of-an-existing-deck-of-flashcards-code-edit-code"><a class="link" href="#editing-the-cards-of-an-existing-deck-of-flashcards-code-edit-code">4.9. Editing the cards of an existing deck of flashcards : <code>edit</code></a></h3>
+<h3 id="viewing-user-statistics-code-stats-code"><a class="link" href="#viewing-user-statistics-code-stats-code">4.11. Viewing user statistics : <code>stats</code></a></h3>
 <div class="paragraph">
-<p>The edit command allows the user to change, add or remove the flashcards in any existing deck.</p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>You can select the following options depending on your choice of action for <code>action</code>: <code>add</code>, <code>change</code>, <code>remove</code></p>
-</li>
-<li>
-<p>For options <code>remove</code>, you must furnish the options <code>index</code>, which corresponds to the index of the flashcard, and any input to <code>front</code> and <code>back</code> will be ignored</p>
-</li>
-<li>
-<p>For options <code>edit</code>, you must furnish the options <code>index</code> (compulsory), as well as <code>front</code> and/or <code>back</code> depending on the change, and any command that lacks any of the three options will be regarded as an error and no flashcard wil be added</p>
-</li>
-<li>
-<p>The <code>index</code> option must be a positive integer e.g. 1, 2, 3, … and must be less than or equal to the total number of cards in the specified deck</p>
-</li>
-<li>
-<p>Any command with no input to <code>front</code>, <code>back</code> and <code>index</code> will be regarded as an error and no action will be taken</p>
-</li>
-</ul>
-</div>
-</div>
+<p>Shows your usage statistics, such as time spent and usage count in general of for a deck of cards.</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>edit deck/DECK_NAME action/DESIRED_ACTION [index/CARD_INDEX] [front/NEW_FRONT_TEXT] [back/NEW_BACK_TEXT]</code></p>
+<p>Format: <code>stats [deck/DECK_NAME]</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -393,14 +629,22 @@ Starts a timed test of 50 seconds with the deck of cards, <code>science_deck</co
 <div class="ulist">
 <ul>
 <li>
-<p><code>edit deck/science_deck</code>
-Returns error as no input is added</p>
-</li>
-<li>
-<p><code>edit deck/science_deck action/edit index/1 front/what is a cell back/a cell is a building block</code>
-Edits the first flashcard of the deck <code>science_deck</code></p>
+<p><code>stats</code><br></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Displays the overview of the time spent and usage count of all decks of cards. Also shows the statistics of the current program State.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>stats deck/science_deck</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Display the overview of time spend and usage count of the deck of cards, <code>science_deck</code>.</p>
 </div>
 </div>
 </div>
@@ -454,4 +698,4 @@ e.g. <code>edit deck/science_deck action/edit index/1 front/what is a cell back/
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 07:31:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-03 11:55:40 UTC</div></div></div></body></html>
