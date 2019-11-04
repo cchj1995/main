@@ -157,6 +157,15 @@ The following class plays an important role at the architecture level:</p>
 <li>
 <p>There are 3 types of cards used by our App, the <code>JavascriptCard</code>, <code>FrontBackCard</code> and <code>MultipleChoiceCard</code>.</p>
 </li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/cards_class_diagram.png" alt="cards class diagram">
+</div>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p><code>JavascriptCard</code> and <code>FrontBackCard</code> implements from <code>FlashCard</code>, an interface class.</p>
 </li>
@@ -167,6 +176,13 @@ The following class plays an important role at the architecture level:</p>
 <p>The interface class <code>FlashCard</code> also implements <code>JsonInterface</code> class to allow loading and saving to Json format.</p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>For the <code>MultipleChoiceCard</code>, the choices provided by the user must be unique, i.e. there cannot be any duplicate in the choices provided.
+If a duplicate choice is detected, then the creation of the <code>MultipleChoiceCard</code> will not be successful.</p>
+</div>
+<div class="paragraph">
+<p>Refer to the activity diagram below to see the process of creating a <code>MultipleChoiceCard</code>:</p>
 </div>
 <div class="paragraph">
 <div class="title">FlashCard Priority</div>
@@ -1545,4 +1561,4 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 16:44:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 17:12:55 UTC</div></div></div></body></html>
