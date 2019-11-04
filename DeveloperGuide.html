@@ -24,13 +24,14 @@
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel3">
 <li><a href="#implementation-2">3.1. Implementation</a></li>
-<li><a href="#design-considerations">3.2. Design Considerations</a></li>
+<li><a href="#design-considerations-2">3.2. Design Considerations</a></li>
 <li><a href="#proposed-saving-user-statistics-feature">3.3. [Proposed] Saving User Statistics feature</a></li>
 <li><a href="#logging">3.4. Logging</a></li>
 <li><a href="#Implementation-Configuration">3.5. Configuration</a></li>
 <li><a href="#ui">3.6. UI</a></li>
 <li><a href="#timed-untimed-test">3.7. Timed/Untimed Test</a></li>
 <li><a href="#running-a-code-flashcard">3.8. Running a code flashcard</a></li>
+<li><a href="#proposed-configure-difficulty-of-test-set-in-code-test-code-mode">3.9. [Proposed] Configure difficulty of test set in <code>test</code> mode</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -150,11 +151,6 @@ The following class plays an important role at the architecture level:</p>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S1-CS2103-F09-2/main/src/main/java/dream/fcard/model"><code>Model</code></a></p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/cards_class_diagram.png" alt="cards class diagram">
-</div>
-</div>
 <div class="ulist">
 <div class="title"><code>FlashCard</code>,</div>
 <ul>
@@ -210,37 +206,69 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/flashcards_priority%20cards.png" alt="flashcards priority cards">
+<img src="images/PriorityFlashCardTestSetSequenceDiagram.png" alt="PriorityFlashCardTestSetSequenceDiagram">
 </div>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Constructor of <code>ExamRunner</code> is called.</p>
+<p>Step 1: Constructor of <code>ExamRunner</code> is called.</p>
 </li>
 <li>
-<p>In the constructor of <code>ExamRunner</code>, a method call is made to <code>Deck</code> to create a subset of cards for test.</p>
+<p>Step 2: In the constructor of <code>ExamRunner</code>, a method call is made to <code>Deck</code> to create a subset of cards for test.</p>
 </li>
 <li>
-<p><code>Deck</code> processes the method call, responds as such:</p>
+<p>Step 3: If there are less than 10 cards in <code>Deck</code>, return all the cards.</p>
+</li>
+<li>
+<p>Step 4 - 10: Return a set of cards with both <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards, which the proportion is weighted at 60% to 40% ratio respectively.</p>
+</li>
+<li>
+<p>Step 11: <code>Deck</code> returns the test set to <code>ExamRunner</code>.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">2.4.1. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-store-and-select-the-code-high_priority-code-and-code-low_priority-code-cards"><a class="link" href="#aspect-how-to-store-and-select-the-code-high_priority-code-and-code-low_priority-code-cards">Aspect: how to store and select the <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p>If there are less than 10 cards in <code>Deck</code>, return all the cards.</p>
+<p><strong>Alternative 1:</strong> Use a priority queue to store the cards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Allows the user to test the cards according to <code>HIGH_PRIORITY</code> cards first, effectively choosing only <code>HIGH_PRIORITY</code> cards first, then <code>LOW_PRIORITY</code> cards.</p>
 </li>
 <li>
-<p>If there are more than 10 cards in <code>Deck</code>, return a set of cards with both <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards, which the proportion is weighted at 60% to 40% ration respectively.</p>
+<p>Cons: Certain <code>LOW_PRIORITY</code> cards may not be tested if the test set size is smaller than the number of <code>HIGH_PRIORITY</code> cards</p>
+</li>
+<li>
+<p>Cons: FlashCard Pro cannot have the flexibility of letting the user select the number of <code>LOW_PRIORITY</code> cards in the test set.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><code>Deck</code> returns the test set to <code>ExamRunner</code>.</p>
+<p><strong>Alternative 2: (Current Choice)</strong> Maintain two lists of cards, <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Can control the ratio of <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards in the test set created</p>
+</li>
+<li>
+<p>Pros: Have the flexibility to randomize the card order and choose a random set each time</p>
+</li>
+<li>
+<p>Cons: FlashCard Pro cannot have the flexibility of letting users assign more than 2 priority levels</p>
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p>The current implementation has yet to handle the situation where <code>ExamRunner</code> creates a test set when there are no cards in Deck. This will be implemented before the next code release.</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -401,7 +429,7 @@ If all parsing types fail, there must be an error with the string input, thus a 
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2. Design Considerations</a></h4>
 <div class="paragraph">
 <p>The JsonParser is designed to be a utility class with a pure function without any mutation of state.
 Thus it should be self contained within a single function call.</p>
@@ -414,7 +442,7 @@ Thus it should be self contained within a single function call.</p>
 
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.3.2. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-saving-executes"><a class="link" href="#aspect-how-saving-executes">Aspect: How saving executes</a></h5>
 <div class="ulist">
@@ -567,7 +595,7 @@ and passing user command input to the <code>Responder</code> class.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.7.2. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.7.2. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-the-timed-untimed-test-mechanism-works"><a class="link" href="#aspect-how-the-timed-untimed-test-mechanism-works">Aspect: how the timed/untimed test mechanism works</a></h5>
 <div class="ulist">
@@ -675,6 +703,26 @@ The  following use case illustrates how the card works.</p>
 <div class="paragraph">
 <p>Use case resumes from step 4.</p>
 </div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-configure-difficulty-of-test-set-in-code-test-code-mode"><a class="link" href="#proposed-configure-difficulty-of-test-set-in-code-test-code-mode">3.9. [Proposed] Configure difficulty of test set in <code>test</code> mode</a></h3>
+<div class="paragraph">
+<p>Currently, the user is restricted to a test set of 60% <code>HIGH_PRIORITY</code> and 40% <code>LOW_PRIORITY</code> cards in the test set.</p>
+</div>
+<div class="paragraph">
+<p>In V2.0, the user should be able to configure the proportion of <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards in the test set to pitch the level of difficulty of the test.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ConfigurePriorityFlashCardTestSetSequenceDiagram.png" alt="ConfigurePriorityFlashCardTestSetSequenceDiagram">
+</div>
+</div>
+<div class="paragraph">
+<p>The ExamRunner will be expanded to allow the user to take in the ratio of <code>HIGH_PRIORITY</code>.</p>
+</div>
+<div class="paragraph">
+<p>Then, the computation of the number of <code>HIGH_PRIORITY</code> and <code>LOW_PRIORITY</code> cards will be done according to the ratio provided by the user.</p>
 </div>
 </div>
 </div>
@@ -787,99 +835,99 @@ The  following use case illustrates how the card works.</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user that takes flash card tests</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">select an option out of four that best matches the front of a flash card</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I can check that I have understood the concept the flash card aims to impart</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">learner who wants to track his/her progress</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view the questions I have not done well in</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">improve my understanding on these concepts tested</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">learner who wants to prioritise some test questions over others</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">set which questions are more important</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">be exposed to these important questions more in the tests</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">beginner user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access a help page</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">i can learn about the features at a glance</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">student with subjects of different language mediums</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add flashcards of differing languages</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I can customise my flashcards to the subject I am interested to do</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user creating flash cards</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">save collections of thematically similar flash cards</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I can share my cards easily to other users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view the list of flashcards in a deck</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remember the material at the back of the flashcard</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">edit the front and/or back of the flashcard in a deck</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">delete a flashcard from a deck</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view the decks of flashcards in my library</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I know what are the decks available for my usage</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">intermediate learner</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">vary the amount of difficult questions in a test</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">expose myself to a test with varying difficult each time I test myself</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">expert learner with MCQ flashcard test</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">remove the choices given by the MCQ choices and enter the answers via CLI</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">test my understanding of the concept without a MCQ choice prompt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">learner attempting MCQ questions</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">have randomised choices each time I try the test</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">I will not copy the choice from the previous test</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">restore my library state of my previous session</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">continue using FlashCard Pro without much time wasted</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user attempting a test</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view my score after the test</p></td>
 <td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who attempted a test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">track my progress across mutliple test</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">monitor my attempts and correctness</p></td>
 </tr>
 </tbody>
 </table>
@@ -1497,4 +1545,4 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 11:42:52 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2019-11-04 16:25:51 UTC</div></div></div></body></html>
