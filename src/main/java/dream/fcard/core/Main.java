@@ -28,6 +28,7 @@ public class Main {
      */
     public static void main(String[] args) {
         //Application.launch(CliEditor.class, args);
+        int test = 1;
         Application.launch(MainApp.class, args);
     }
 }
